@@ -16,10 +16,14 @@ To get the files please run
 git clone https://github.com/jayzjayesh/dragplay.git
 
 To run the the server
-In the dragplay folder path would be (Your clone folder -> dragplay-> dragplay) 
+In the dragplay folder path would be (Your clone folder -> dragplay-> dragplay)
+
+First run the command to install node modules again
+
+npm i react-scripts
 
 
-run the command
+Then run the command
 
 
 npm start
