@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: lightgray;
+  height: 100%;  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App{
+  height: 100%;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 250px;
+  background-color: black;
+  margin-left: 80%;
+  color: white;
+  height: 100%;
+  float : right;
+}
+
+.sidebar-elements{
+  display: block;
+}
+
+.mainpage {
+  height: 620px;
+  width: 80%;
+  background-color: lightgray;
+  position: absolute;
+}
+
+.page-element {
+  background-color: white;
+  height: 5%;
+  margin: 20px;
+  width: 80%;
+  text-align: left;
+  color: black;
+  cursor: move;
+  outline: none;
+}
+
+.fa-grip-vertical {
+  color: gray;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+
+
+.form-data{
+  background-color: white;
+  width: 40%;
+  height: 80%;
+  margin: 0 auto;
+  transform: translateY(100px);
+  padding: 5px;
+}
+
+.form-header{
+  font-size: 30px;
+}
+
+.fa-times{
+  float: right;
+  margin-top: 2px;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+.form-label{
+  float: left;
+  font-size: 15px;
+}
+
+.newInput{
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
