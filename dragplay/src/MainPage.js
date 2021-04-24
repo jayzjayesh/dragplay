@@ -249,7 +249,7 @@ export default class MainPage extends React.Component {
     this.setState({isMouseDown:false,elementX : elementX,elementY : elementY,currentElements:currArr});
   }
 
-
+   //Element needs to clicked first to move
   //When user is moving the mouse keep changing the left and top property of element being dragged.
   //When user stops the dragging and again drags the drag should start from position when element was last dragged at.
   //deltaX and deltaY gives the initial position
