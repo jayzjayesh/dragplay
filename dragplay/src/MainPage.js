@@ -63,9 +63,14 @@ export default class MainPage extends React.Component {
     maindiv.addEventListener("mousemove",this.mouseMove);
 
     // Get current elements on the page from the local storage.
-
+    
     var getElements = JSON.parse(localStorage.getItem('currentElements'));
-    this.setState({currentElements : getElements});
+
+    if(getElements != null){
+      this.setState({currentElements : getElements});
+    }
+
+    
   }
 
 
@@ -178,6 +183,15 @@ export default class MainPage extends React.Component {
     e.preventDefault();
     e.target.style.border = "0.1em solid red";
 
+    var currEle = {
+      id : e.target.id,
+      inputText : null,
+      fontSize : null,
+      fontWeight : null
+  }
+
+  this.setState({currentElement : currEle});
+
 
   }
 
@@ -215,15 +229,15 @@ export default class MainPage extends React.Component {
   mouseDown(e){
       var mouseX = e.clientX;
       var mouseY = e.clientY;
-
+      /*
       var currEle = {
         id : e.target.id,
         inputText : null,
         fontSize : null,
         fontWeight : null
-    }
+    }*/
 
-      this.setState({clientX : mouseX,clientY:mouseY,isMouseDown : true,currentElement:currEle});
+      this.setState({clientX : mouseX,clientY:mouseY,isMouseDown : true});
 
   }
 
@@ -249,7 +263,7 @@ export default class MainPage extends React.Component {
     this.setState({isMouseDown:false,elementX : elementX,elementY : elementY,currentElements:currArr});
   }
 
-   //Element needs to clicked first to move
+  //Dragging only works when user clicks and selects an element.
   //When user is moving the mouse keep changing the left and top property of element being dragged.
   //When user stops the dragging and again drags the drag should start from position when element was last dragged at.
   //deltaX and deltaY gives the initial position
@@ -258,12 +272,18 @@ export default class MainPage extends React.Component {
       if(!this.state.isMouseDown){
           return;
       }
-      var deltaX = e.clientX - this.state.clientX;
+
+      if(this.state.currentElement.id){
+
+        var deltaX = e.clientX - this.state.clientX;
     var deltaY =   e.clientY - this.state.clientY;
 
     var element = document.getElementById(this.state.currentElement.id);
     element.style.left = this.state.elementX + deltaX + 'px';
     element.style.top = this.state.elementY + deltaY + 'px';
+
+      }
+      
   }
 
 
